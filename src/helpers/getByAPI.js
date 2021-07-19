@@ -17,7 +17,7 @@ const getNodeByText = (node, text) => {
     const isTextComponent = filterNodeByType(node, Text);
     if (isTextComponent) {
       const textChildren = getChildrenAsText(node.props.children, Text);
-      if (textChildren) {
+      if (textChildren && !node.props.ignoreForTest) {
         const textToTest = textChildren.join('');
         return typeof text === 'string'
           ? text === textToTest
