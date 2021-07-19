@@ -68,7 +68,7 @@
     "prepublish": "yarn build && yarn copy-flowtypes",
     "copy-flowtypes": "flow-copy-source --ignore __tests__/*.js src build",
     "build": "rm -rf build; babel src --out-dir build --ignore 'src/__tests__/*'",
-    "prepare": "npm run build"
+    "prepare": "yarn build && yarn copy-flowtypes"
   },
   "jest": {
     "preset": "react-native",
